@@ -525,26 +525,335 @@ cout<<countt<<endl;
 
 //R.Permutation with arrays
 
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
 
+int main()
+{
+   int size;
+   cin>>size;
+   int a[size],b[size];
+
+   for(int i=0;i<size;i++)
+   {
+       cin>>a[i];
+   }
+   for(int i=0;i<size;i++)
+   {
+     cin>>b[i] ;
+   }
+   sort(a,a+size);
+   sort(b,b+size);
+   for(int i=0;i<size;i++)
+   {
+       if(a[i]!=b[i])
+       {
+           cout<<"no";
+           return 0;
+       }
+   }
+   cout<<"yes";
+    return 0;
+}
 
 //S.Search In Matrix
 
+#include <iostream>
 
+using namespace std;
+
+int main()
+{
+   short n,m;
+   cin>>n>>m;
+   int a[n][m];
+
+   for(int i=0;i<n;i++)
+   {
+       for(int j=0;j<m;j++)
+       {
+           cin>>a[i][j];
+       }
+   }
+   int x;
+   cin>>x;
+   for(int i=0;i<n;i++)
+   {
+       for(int j=0;j<m;j++)
+       {
+          if(a[i][j]==x)
+          {
+              cout<<"will not take number";
+              return 0;
+          }
+
+       }
+   }
+   cout<<"will take number";
+
+    return 0;
+}
 //T.Matrix
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
 
+int main()
+{
+   short n;
+   cin>>n;
+   int a[n][n];
+
+   for(int i=0;i<n;i++)
+   {
+       for(int j=0;j<n;j++)
+       {
+           cin>>a[i][j];
+       }
+   }
+   int sum1=0;
+  for(int i=0,j=0;i<n;i++,j++)
+   {
+            sum1+=a[i][j];
+    }
+
+ int sum2=0;
+ for( int i=0,j=n-1;i<n;i++,j--)
+ {
+
+        sum2+=a[i][j];
+
+ }
+
+
+  cout<<abs(sum1-sum2)<<endl;
+    return 0;
+}
 
 //U.Is B a subsequence of A ?
+#include <iostream>
+using namespace std;
 
+int main()
+{
+   int n,m;
+   cin>>n>>m;
+   int countt=0;
+   int a[n],j=0;
+
+   for(int i=0;i<n;i++)
+   {
+       cin>>a[i];
+   }
+
+
+  for(int i=0;i<m;i++)
+  {
+    int x;
+    cin>>x;
+    for( ;j<n;j++)
+
+        if(x==a[j])
+        {
+            countt++;
+            j++;
+            break;
+        }
+
+  }
+
+  if(countt==m)
+    cout<<"YES"<<endl;
+  else
+    cout<<"NO"<<endl;
+    return 0;
+}
 
 
 //V.Frequency Array
 
+#include <iostream>
+using namespace std;
 
+int main()
+{
+   int n,m;
+   cin>>n>>m;
+   int a[n];
+
+   for(int i=0;i<n;i++)
+   {
+       cin>>a[i];
+   }
+
+  int farr[m+1]= {};
+  for(int i=0;i<n;i++)
+  {
+    farr[a[i]]++;
+  }
+
+for(int i=1;i<=m;i++)
+  {
+    cout<<farr[i]<<endl;
+  }
+    return 0;
+}
 //W.Mirror Array
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
 
+int main()
+{
+   int n,m;
+   cin>>n>>m;
+   int a[n][m];
+
+   for(int i=0;i<n;i++)
+   {
+         for(int j=0;j<m;j++)
+        {
+         cin>>a[i][j];
+         }
+   }
+
+     for(int i=0;i<n;i++)
+   {
+         for(int j=0,k=m-1;j<m/2;j++,k--)
+        {
+         swap(a[i][j],a[i][k]);
+         }
+   }
+     for(int i=0;i<n;i++)
+   {
+         for(int j=0;j<m;j++)
+        {
+         cout<<a[i][j]<<" ";
+         }
+         cout<<endl;
+   }
+
+    return 0;
+}
 
 //X.8 Neighbors
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
 
+int main()
+{
+   int n,m;
+   cin>>n>>m;
+   char a[101][101];
+
+   for(int i=1;i<=n;i++)
+   {
+         for(int j=1;j<=m;j++)
+        {
+         cin>>a[i][j];
+         }
+   }
+    int x,y;
+    cin>>x>>y;
+
+    if(a[x][y-1]!='.'&&
+       a[x][y+1]!='.'&&
+       a[x-1][y]!='.'&&
+       a[x+1][y]!='.'&&
+       a[x-1][y-1]!='.'&&
+       a[x-1][y+1]!='.'&&
+       a[x+1][y+1]!='.'&&
+       a[x+1][y-1]!='.')
+
+        cout<<"yes"<<endl;
+
+
+    else
+        cout<<"no"<<endl;
+    return 0;
+}
 //Y.Range sum query
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
 
+int main()
+{
+   long long  n,m;
+   cin>>n>>m;
+   long long  a1[n];
+   long long  a2[n];
+   for(int i=0;i<n;i++)
+   {
+         cin>>a1[i]; 
+         if(a1[i]==0)
+         {
+             a2[i]=a1[i];
+         }
+         else 
+         {
+            a2[i]=a1[i]+a2[i-1];
+
+         }
+       
+   }
+   
+    while(m--)
+    {
+      
+        int x,y;
+        cin>>x>>y;
+        x--;
+        y--;
+        long long  sum=a2[y]-a2[x]+a1[x];
+        cout<<sum<<endl;
+    }
+    return 0;
+}
 //Z.Binary Search
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int binarysearch(int arr[],int left,int right,int searchh)
+{
+    while(left<=right)
+    {
+        int mid=left +(right-left )/2;
+        if(arr[mid]==searchh)
+            return mid;
+        else if (arr[mid]<searchh)
+        {
+          left =mid+1;  
+        }
+        else
+        {
+           right=mid-1; 
+        }
+    }
+    return -1;
+}
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    int arr[n];
+    for(int i=0; i<n; i++)
+    {
+        cin>>arr[i];
+    }
+    sort(arr,arr+n);
+    while(m--)
+    {
+        int s;
+        cin>>s;
+        int result =binarysearch(arr,0,n-1,s);
+        if(result==-1)
+        cout <<"not found"<<endl;
+        else 
+            cout<<"found"<<endl;
+    }
+
+    return 0;
+}
