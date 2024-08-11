@@ -693,33 +693,21 @@ for(int i=2;i<x;i++)
 //Z.Three Numbers
 #include <iostream>
 #include<bits/stdc++.h>
-#include<cmath>
 using namespace std;
 int main()
 {
-   int n;
-   cin>>n;
-   long long num;
-   int ones;
-   for(int i=0;i<n;i++)
+   int n,m,c=0;
+   cin>>n>>m;
+   for(int i=0;i<=n;i++)
    {
-       cin>>num;
-        ones=0;
-       while(num>0)
+       for(int j=0;j<=n;j++)
        {
-           if(num%2==1)
-            ones++;
-            
-          num/=2;
+           if(m-i-j>=0&&m-i-j<=n)
+            c++;
+           
        }
-     long long sum=0;
-     for(int j=0;j<ones;j++)
-     {
-         sum+=1*pow(2,j);
-     }
-       cout<<sum<<endl;
- 
    }
- 
+   cout<<c<<endl;
+
     return 0;
 }
