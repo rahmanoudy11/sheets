@@ -635,12 +635,37 @@ int main()
 }
 
 //X.Convert To Decimal 2
-
-
-
-
-
-
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int n;
+   cin>>n;
+   long long num;
+   int ones;
+   for(int i=0;i<n;i++)
+   {
+       cin>>num;
+        ones=0;
+       while(num>0)
+       {
+           if(num%2==1)
+            ones++;
+            
+          num/=2;
+       }
+     long long sum=0;
+     for(int j=0;j<ones;j++)
+     {
+         sum+=1*pow(2,j);
+     }
+       cout<<sum<<endl;
+ 
+   }
+ 
+    return 0;
+}
 
 //Y.Easy Fibonacci
 
@@ -666,4 +691,35 @@ for(int i=2;i<x;i++)
 }
 
 //Z.Three Numbers
-
+#include <iostream>
+#include<bits/stdc++.h>
+#include<cmath>
+using namespace std;
+int main()
+{
+   int n;
+   cin>>n;
+   long long num;
+   int ones;
+   for(int i=0;i<n;i++)
+   {
+       cin>>num;
+        ones=0;
+       while(num>0)
+       {
+           if(num%2==1)
+            ones++;
+            
+          num/=2;
+       }
+     long long sum=0;
+     for(int j=0;j<ones;j++)
+     {
+         sum+=1*pow(2,j);
+     }
+       cout<<sum<<endl;
+ 
+   }
+ 
+    return 0;
+}
